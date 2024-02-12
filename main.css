@@ -1,0 +1,102 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+}
+.aside {
+  width: 30%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  border: 2px solid rgb(207, 207, 207);
+  padding: 20px 10px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.header {
+  color: white;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+  border: 2px solid rgb(1, 114, 1);
+  border-radius: 0 0 5px 5px;
+  position: relative;
+  z-index: 1;
+}
+.screen {
+  background-color: violet;
+  padding: 20px 10px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: auto;
+  border-radius: 5px;
+  border: 2px solid rgb(162, 38, 162);
+  transform: scaleY(1.05);
+  position: relative;
+  z-index: 0;
+}
+.message {
+  background-color: yellow;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  max-width: 300px;
+  width: 100%;
+  border: 2px solid rgb(198, 198, 1);
+}
+.message--left {
+  align-self: flex-start;
+}
+.message--right {
+  align-self: flex-end;
+}
+.input {
+  color: white;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+  border: 2px solid rgb(176, 0, 0);
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .aside {
+    display: none;
+  }
+  .header,
+  .screen,
+  .message,
+  .input {
+    border: none;
+  }
+}
+@media (max-width: 375px) {
+  .message {
+    max-width: 150px;
+    text-align: center;
+  }
+}
